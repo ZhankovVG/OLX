@@ -31,7 +31,9 @@ class ProductAdmin(admin.ModelAdmin):
     inlines = [CommentsInline]
 
     def get_poster(self, objects):
-        return mark_safe(f"<img src={objects.poster.url} width '50' ")
+        return mark_safe(f"<img src={objects.poster.url} width='50' ")
+    
+    get_poster.short_description = 'Изображение'
 
     prepopulated_fields = {'url': ('title', )}
 
