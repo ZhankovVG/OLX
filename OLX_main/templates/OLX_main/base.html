@@ -12,13 +12,29 @@
     <!-- bootstrap icons -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.3/font/bootstrap-icons.css">
     <link rel="shortcut icon" href="{% static 'OLX_main/img/olx.png' %}">
+    <link rel="stylesheet" href="{% static 'js/script.js' %}">
     <link rel="stylesheet" href="{% static 'OLX_main/style/index.css' %}">
     <title>{% block title %}{% endblock %}</title>
 </head>
 
 <body>
-    <header>
-        <div>
+    <header class="header scrolling">
+        <div class="header-left">
+            <!-- Контент расположенный слева -->
+            <a href="{% url 'main' %}"><img src="{% static 'OLX_main/img/OLX_blue_logo.png' %}" alt="logo-olx"></a>
+        </div>
+        <div class="header-right">
+            <!-- Контент расположенный справа -->
+            <nav>
+                <div>
+                    <ul>
+                        <li>Вихід</li>
+                        <li>Вхід</li>
+                        <li>Реєстрація</li>
+                        <li class="add-announcement">Додати оголошення</li>
+                    </ul>
+                </div>
+            </nav>
         </div>
     </header>
 
@@ -29,6 +45,21 @@
 
     {% block footer %}
     {% endblock %}
+
+    <script>
+        const header = document.querySelector('.header');
+        let scrollPosition = window.pageYOffset;
+        window.addEventListener('scroll', () => {
+            const newScrollPosition = window.pageYOffset;
+            if (newScrollPosition > scrollPosition) {
+                header.classList.add('scrolling');
+            } else {
+                header.classList.remove('scrolling');
+            }
+            scrollPosition = newScrollPosition;
+        });
+    </script>
+
 </body>
 
 </html>
