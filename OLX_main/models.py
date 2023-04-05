@@ -17,6 +17,7 @@ class Category(models.Model):
     # Категории
     name = models.CharField('Название', max_length=70)
     url = models.SlugField(max_length=120, unique=True)
+    img = models.ImageField('Картинка', upload_to='photo_category/')
 
     def __str__(self):
         return self.name

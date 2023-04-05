@@ -11,9 +11,14 @@ class UserAdmin(admin.ModelAdmin):
 
 @admin.register(Category)
 class CategoryAdmin(admin.ModelAdmin):
-    list_display = ('name', 'url')
+    list_display = ('name', 'url', 'get_img')
     list_display_links = ('name', )
     prepopulated_fields = {'url': ('name', )}
+
+    def get_img(self, objects):
+        return mark_safe(f"<img src={objects.img.url} width='50' ")
+    
+    get_img.short_description = 'Изображение'
 
 
 class CommentsInline(admin.StackedInline):
