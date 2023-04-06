@@ -12,5 +12,6 @@ class CategoryOutput:
 
 
 class ProductView(CategoryOutput, ListView):
+    # Вывод товара
     model = Product
     queryset = Product.objects.filter(draft=False)

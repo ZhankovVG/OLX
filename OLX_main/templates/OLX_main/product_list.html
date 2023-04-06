@@ -5,6 +5,9 @@
 {% endblock %}
 
 {% block main %}
+<div class="centr">
+    <h2>Головні рубрики</h2>
+</div>
 <div class="center-block">
     {% for el in categoryes %}
     <div class="category-column">
@@ -15,28 +18,23 @@
     {% endfor %}
 </div>
 
-<div class="content">
-       Lorem ipsum dolor sit amet consectetur adipisicing elit. Maxime ratione, ab corrupti error quis debitis vero tempora
-    quidem autem explicabo delectus eum saepe accusantium culpa blanditiis quia poLorem ipsum dolor sit amet consectetur
-    adipisicing elit. Maxime ratione, ab corrupti error quis debitis vero tempora
-    quidem autem explicabo delectus eum saepe accusantium culpa blanditiis quia porroLorem ipsum dolor sit amet
-    consectetur adipisicing elit. Maxime ratione, ab corrupti error quis debitis vero tempora
-    quidem autem explicabo delectus eum saepe accusantium culpa blanditiis quia porroLorem ipsum dolor sit amet
-    consectetur adipisicing elit. Maxime ratione, ab corrupti error quis debitis vero tempora
-    quidem autem explicabo delectus eum saepe accusantium culpa blanditiis quia porroLorem ipsum dolor sit amet
-    consectetur adipisicing elit. Maxime ratione, ab corrupti error quis debitis vero tempora
-    quidem autem explicabo delectus eum saepe accusantium culpa blanditiis quia porroLorem ipsum dolor sit amet
-    consectetur adipisicing elit. Maxime ratione, ab corrupti error quis debitis vero tempora
-    quidem autem explicabo delectus eum saepe accusantium culpa blanditiis quia porroLorem ipsum dolor sit amet
-    consectetur adipisicing elit. Maxime ratione, ab corrupti error quis debitis vero tempora
-    quidem autem explicabo delectus eum saepe accusantium culpa blanditiis quia porroLorem ipsum dolor sit amet
-    consectetur adipisicing elit. Maxime ratione, ab corrupti error quis debitis vero tempora
-    quidem autem explicabo delectus eum saepe accusantium culpa blanditiis quia porroLorem ipsum dolor sit amet
-    consectetur adipisicing elit. Maxime ratione, ab corrupti error quis debitis vero tempora
-    quidem autem explicabo delectus eum saepe accusantium culpa blanditiis quia porroLorem ipsum dolor sit amet
-    consectetur adipisicing elit. Maxime ratione, ab corrupti error quis debitis vero tempora
-    quidem autem explicabo delectus eum saepe accusantium culpa blanditiis quia porrorro, consequuntur consequatur?
+<div class="VIP-centr">
+    <h2>VIP-оголошення</h2>
 </div>
 
+<!-- start output of products -->
+
+<div class="output_product">
+    {% for product in product_list %}
+    <div class="product-column">
+        <img class="photo" src="{{ product.poster.url }}" alt="photo">
+        <br><br>
+        <a href="#">{{ product.title | truncatewords:3  }}</a>
+        <br>
+        {{ product.price }} грн.
+    </div>
+    {% endfor %}
+
+<!-- end output of products -->
 
 {% endblock %}
