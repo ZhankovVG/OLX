@@ -1,0 +1,27 @@
+{% extends 'OLX_main/base.html' %}
+{% load static %}
+
+
+{% block main %}
+<div class="datail-product">
+    adr <br><br>
+    <hr>
+    <div>
+        <img src="{{ product.poster.url }}" alt=""><br><br>
+        <h3>{{ product.title }}</h3><br>
+        <h4>
+            <b>
+                <p>{{ product.price }} грн.</p>
+            </b>
+        </h4>
+        <b>
+            <h4>ОПИС</h4>
+        </b>
+        <p class="text">{{ product.description }}</p>
+        {% for user in product.users.all %}
+        <b>Продавець:  </b>{{ user.name }}
+        {% endfor %}
+        <hr>
+    </div>
+</div>
+{% endblock %}

@@ -1,4 +1,6 @@
 from django.db import models
+from django.urls import reverse
+
 
 
 class User(models.Model):
@@ -45,6 +47,9 @@ class Product(models.Model):
     class Meta:
         verbose_name = 'Товар'
         verbose_name_plural = 'Товары'
+
+    def get_absolute_url(self):
+        return reverse('datail', kwargs={'slug' : self.url})
 
 
 class Comments(models.Model):

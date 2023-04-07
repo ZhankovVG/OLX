@@ -29,7 +29,7 @@
     <div class="product-column">
         <img class="photo" src="{{ product.poster.url }}" alt="photo">
         <br><br>
-        <a href="#">{{ product.title | truncatewords:3  }}</a>
+        <a href="{{ product.get_absolute_url }}">{{ product.title | truncatewords:3  }}</a>
         <br>
         {{ product.price }} грн.
     </div>

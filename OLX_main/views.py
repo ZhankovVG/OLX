@@ -15,3 +15,9 @@ class ProductView(CategoryOutput, ListView):
     # Вывод товара
     model = Product
     queryset = Product.objects.filter(draft=False)
+
+
+class ProductDatailView(DetailView):
+    # полное описание товара
+    model = Product
+    slug_field = 'url'
