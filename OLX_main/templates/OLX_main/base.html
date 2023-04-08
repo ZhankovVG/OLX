@@ -17,6 +17,10 @@
 
 <body>
     <header class="header scrolling">
+        <form action="{% url 'search' %}" method="get" class="search">
+            <input type="search" placeholder="Пошук..." name="search">
+            <button type="submit">Знайти</button>
+        </form>
         <div class="header-left">
             <!-- Контент расположенный слева -->
             <a href="{% url 'main' %}"><img src="{% static 'OLX_main/img/OLX_blue_logo.png' %}" alt="logo-olx"></a>
