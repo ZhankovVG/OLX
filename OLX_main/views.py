@@ -21,3 +21,10 @@ class ProductDatailView(DetailView):
     # полное описание товара
     model = Product
     slug_field = 'url'
+
+
+class SearchView(CategoryOutput, ListView):
+    def get_queryset(self):
+        query = self.request.GET.get('search')
+        queryset = Product.objects.filter(title__icontains=query)
+        return queryset
