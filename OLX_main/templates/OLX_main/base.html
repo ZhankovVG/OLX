@@ -30,16 +30,24 @@
             <nav>
                 <div>
                     <ul>
-                        <li>Вихід</li>
-                        <li>Вхід</li>
-                        <li>Реєстрація</li>
-                        <li class="add-announcement">Додати оголошення</li>
+                        {% if user.is_authenticated %}
+                        <p class="user-name">{{ user.username }}</p>
+                        <a href="{% url 'account_logout' %}"><li class="add-announcement">Вихід</li></a>
+                        <a href="#"><li class="add-announcement">Додати оголошення</li></a>
+                        {% else %}
+                        <a href="{% url 'account_login' %}"><li class="add-announcement">Вхід</li></a>
+                        <a href="{% url 'account_signup' %}"><li class="add-announcement">Реєстрація</li></a>
+                        <a href="#"><li class="add-announcement">Додати оголошення</li></a>
+                        {% endif %}
+
                     </ul>
                 </div>
             </nav>
         </div>
     </header>
 
+    {% block registration %}
+    {% endblock %}
 
     {% block main %}
     {% endblock %}
