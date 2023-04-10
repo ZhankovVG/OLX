@@ -57,17 +57,24 @@
     {% endblock %}
 
 <script>  
-    const header = document.querySelector('.header');
-    let scrollPosition = window.pageYOffset;
-        window.addEventListener('scroll', () => {
+     document.addEventListener('DOMContentLoaded', () => {
+        const header = document.querySelector('.header');
+        let scrollPosition = window.pageYOffset;
+        
+        const handleScroll = () => {
             const newScrollPosition = window.pageYOffset;
             if (newScrollPosition > scrollPosition) {
-        header.classList.add('scrolling');
+                header.classList.add('scrolling');
             } else {
-        header.classList.remove('scrolling');
+                header.classList.remove('scrolling');
             }
-    scrollPosition = newScrollPosition;
-        });
+            scrollPosition = newScrollPosition;
+        };
+        
+        handleScroll();
+        
+        window.addEventListener('scroll', handleScroll);
+    });
 </script>
 
 </body>

@@ -52,29 +52,38 @@ header {
     padding: 0;
 }
 
-.header-right nav li {
+.header-right nav a li {
     margin-right: 20px;
+    color: #fff;
 }
 
 .add-announcement {
-    text-align: center;
-    width: 170px;
-    background-color: #fff;
-    color: black;
-    transition: transform 0.8s ease;
+    display: inline-block;
     border-radius: 5px;
+    text-transform: uppercase;
+    transition: background-color 0.1s ease-in-out;
 }
 
 .add-announcement:hover {
-    background-color: #07616b;
-    color: #fff;
+    background-color: #ffffff;
+    color: #000000;
     transform: scale(1.1);
-    cursor: pointer;
-    border-radius: 5px;
 }
-
 /* header end */
 
+
+/* registration start */
+
+.content-wrapper {
+    margin-top: 310px;
+}
+
+.user-name {
+    margin-right: 10px;
+    margin-top: 5px;
+}
+
+/* registration end */
 
 /* main start */
 
