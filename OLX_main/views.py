@@ -1,4 +1,4 @@
-from django.shortcuts import render
+from django.shortcuts import render, get_object_or_404
 from django.views.generic import ListView, DetailView
 from .models import *
 
@@ -24,7 +24,18 @@ class ProductDatailView(DetailView):
 
 
 class SearchView(CategoryOutput, ListView):
+    # поиск по сайту
     def get_queryset(self):
         query = self.request.GET.get('search')
         queryset = Product.objects.filter(title__icontains=query)
         return queryset
+
+
+class CategoryView(CategoryOutput, ListView):
+    # вывод товар по категории
+    model = Product
+    template_name = 'OLX_main/product_list.html'
+
+    def get_queryset(self):
+        category = get_object_or_404(Category, url=self.kwargs['slug'])
+        return Product.objects.filter(category=category, draft=False)
