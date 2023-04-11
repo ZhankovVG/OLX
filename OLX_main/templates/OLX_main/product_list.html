@@ -13,7 +13,7 @@
     <div class="category-column">
         <img src="{{ el.img.url }}" alt="category_img">
         <br>
-        <a href="">{{ el.name }}</a>
+        <a href="{{ el.get_absolute_url }}">{{ el.name }}</a>
     </div>
     {% endfor %}
 </div>
