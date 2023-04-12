@@ -8,8 +8,8 @@
 
 {% block main %}
 <div class="datail-product">
-    добавить назад
-     <br><br>
+    <a href="javascript:history.back()" style="float: left;"><i class="bi bi-chevron-left"></i> Назад</a>
+    <br>
     <hr>
     <div>
         <img src="{{ product.poster.url }}" alt=""><br><br>
@@ -24,9 +24,17 @@
         </b>
         <p class="text">{{ product.description }}</p>
         {% for user in product.users.all %}
-        <b>Продавець:  </b>{{ user.name }}
+        <b>Продавець: </b>{{ user.name }}
         {% endfor %}
         <hr>
     </div>
 </div>
+
+
+<script>
+    // кнопка назад на предыдущую страницу
+    function goBack() {
+        window.history.back();
+    }
+</script>
 {% endblock %}

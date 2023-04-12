@@ -9,7 +9,7 @@
     <!-- bootstrap -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous">
-    
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.3/font/bootstrap-icons.css">
     <link rel="shortcut icon" href="{% static 'OLX_main/img/olx.png' %}">
     <link rel="stylesheet" href="{% static 'OLX_main/css/index.css' %}">
     <title>{% block title %}{% endblock %}</title>
@@ -32,12 +32,22 @@
                     <ul>
                         {% if user.is_authenticated %}
                         <p class="user-name">{{ user.username }}</p>
-                        <a href="{% url 'account_logout' %}"><li class="add-announcement">Вихід</li></a>
-                        <a href="#"><li class="add-announcement">Додати оголошення</li></a>
+                        <a href="{% url 'account_logout' %}">
+                            <li class="add-announcement">Вихід</li>
+                        </a>
+                        <a href="#">
+                            <li class="add-announcement">Додати оголошення</li>
+                        </a>
                         {% else %}
-                        <a href="{% url 'account_login' %}"><li class="add-announcement">Вхід</li></a>
-                        <a href="{% url 'account_signup' %}"><li class="add-announcement">Реєстрація</li></a>
-                        <a href="#"><li class="add-announcement">Додати оголошення</li></a>
+                        <a href="{% url 'account_login' %}">
+                            <li class="add-announcement">Вхід</li>
+                        </a>
+                        <a href="{% url 'account_signup' %}">
+                            <li class="add-announcement">Реєстрація</li>
+                        </a>
+                        <a href="#">
+                            <li class="add-announcement">Додати оголошення</li>
+                        </a>
                         {% endif %}
 
                     </ul>
@@ -56,26 +66,26 @@
     {% block footer %}
     {% endblock %}
 
-<script>  
-     document.addEventListener('DOMContentLoaded', () => {
-        const header = document.querySelector('.header');
-        let scrollPosition = window.pageYOffset;
-        
-        const handleScroll = () => {
-            const newScrollPosition = window.pageYOffset;
-            if (newScrollPosition > scrollPosition) {
-                header.classList.add('scrolling');
-            } else {
-                header.classList.remove('scrolling');
-            }
-            scrollPosition = newScrollPosition;
-        };
-        
-        handleScroll();
-        
-        window.addEventListener('scroll', handleScroll);
-    });
-</script>
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const header = document.querySelector('.header');
+            let scrollPosition = window.pageYOffset;
+
+            const handleScroll = () => {
+                const newScrollPosition = window.pageYOffset;
+                if (newScrollPosition > scrollPosition) {
+                    header.classList.add('scrolling');
+                } else {
+                    header.classList.remove('scrolling');
+                }
+                scrollPosition = newScrollPosition;
+            };
+
+            handleScroll();
+
+            window.addEventListener('scroll', handleScroll);
+        });
+    </script>
 
 </body>
 
