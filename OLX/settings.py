@@ -41,7 +41,7 @@ INSTALLED_APPS = [
     'OLX_main',
     'django.contrib.sites',
     'allauth',
-	'allauth.account',
+    'allauth.account',
 ]
 
 MIDDLEWARE = [
