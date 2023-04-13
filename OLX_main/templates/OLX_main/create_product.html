@@ -1,0 +1,17 @@
+{% extends 'OLX_main/base.html' %}
+
+
+{% block title %}
+Добавление нового обьявления
+{% endblock %}
+
+{% block main %}
+<div class="datail-product">
+    <h1>Добавление статьй</h1>
+    <form method="post" enctype="multipart/form-data">
+        {% csrf_token %}
+        {{ form.as_p }} <br><br>
+        <button class="btn btn-warning">Добавить публикацию</button>
+    </form>
+</div>
+{% endblock %}
