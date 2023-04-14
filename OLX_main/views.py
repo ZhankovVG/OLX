@@ -56,3 +56,15 @@ class CreateProductView(View):
             return redirect('main')
         else:
             return render(request, 'OLX_main/create_product.html', {'form': form})
+
+
+class CommentsView(View):
+    # добавление коментария
+    def post(self, request, pk):
+        form = AddComentsForm(request.POST)
+        product = Product.objects.get(id=pk)
+        if form.is_valid():
+            form = form.save(commit=False)
+            form.product = product
+            form.save()
+        return redirect(product.get_absolute_url())

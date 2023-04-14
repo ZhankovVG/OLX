@@ -278,3 +278,37 @@ a {
 }
 
 /* end btn */
+
+
+.comments {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    max-width: 300px;
+    margin-right: auto;
+    margin-bottom: auto;
+    
+}
+
+.comment-form {
+    width: 100%;
+    
+}
+
+.form-group {
+    margin-bottom: 10px;
+}
+
+.form-control {
+    width: 100%;
+}
+
+.comments-user {
+    display: flex;
+    flex-direction: column;
+    max-width: 300px;
+    margin-left: 450px;
+    margin-top: -320px;
+    height: 350px;
+}
+/* end comments */
