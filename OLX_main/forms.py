@@ -1,4 +1,4 @@
-from .models import Product
+from .models import *
 from django.forms import ModelForm
 from django import forms
 
@@ -12,3 +12,10 @@ class AddNewPostForm(forms.ModelForm):
             'category': forms.Select(attrs={'class': 'form-control'}),
             'users': forms.SelectMultiple(attrs={'class': 'form-control'}),
         }
+
+
+class AddComentsForm(forms.ModelForm):
+    class Meta:
+        app_label = 'django_comments_xtd'
+        model = Comments
+        fields = ['name', 'text', 'email']
