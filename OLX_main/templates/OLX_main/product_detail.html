@@ -28,6 +28,35 @@
         {% endfor %}
         <hr>
     </div>
+    <div class="comments">
+        <form action="{% url 'comments' product.id %}" method="post" class="comment-form">
+            <h4>Оставить отзыв о товаре</h4>
+            {% csrf_token %}
+            <div class="form-group">
+                <label for="username">Имя *</label>
+                <input type="text" name="name" class="form-control" placeholder="Имя *">
+            </div>
+            <div class="form-group">
+                <label for="useremail">Email *</label>
+                <input type="email" name="email" class="form-control" placeholder="Email *">
+            </div>
+            <div class="form-group">
+                <label for="comments">Комментарий *</label>
+                <textarea name="text"  cols="23" class="form-control" placeholder="Ваш комментарий *"></textarea>
+            </div>
+            <div class="form-group">
+                <button type="submit" class="btn btn-success">Отправить</button>
+            </div>
+        </form>
+    </div>
+    <div class="comments-user">
+        <h4>Коментарии:</h4>
+        {% for el in product.comments_set.all %}
+        <p><b>Имя :</b> {{ el.name }}</p>
+        <p><b>Коментарий :</b> {{ el.text }}</p>
+        <hr>
+        {% endfor %}
+    </div>
 </div>
 
 
