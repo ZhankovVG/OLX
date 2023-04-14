@@ -43,6 +43,7 @@ class CategoryView(CategoryOutput, ListView):
 
 
 class CreateProductView(View):
+    # добавление нового обьявления
     def get(self, request):
         form = AddNewPostForm()
         return render(request, 'OLX_main/create_product.html', {'form': form})
@@ -51,8 +52,7 @@ class CreateProductView(View):
         form = AddNewPostForm(request.POST, request.FILES)
         if form.is_valid():
             product = form.save(commit=False)
-            # Дополнительная обработка полей перед сохранением, если необходимо
             product.save()
-            return redirect('main')  # Перенаправление на главную страницу или на другую страницу
+            return redirect('main')
         else:
             return render(request, 'OLX_main/create_product.html', {'form': form})
