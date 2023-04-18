@@ -9,7 +9,11 @@
 {% block main %}
 <div class="datail-product">
     <a href="javascript:history.back()" style="float: left;"><i class="bi bi-chevron-left"></i> Назад</a>
-    <br>
+    <div class="category-path">
+        <a href="{% url 'main' %}">Головна /</a>
+        <a href="{% url 'datail' product.url %}">Товар /</a>
+        <a href="">{{ product.category.name }}</a>
+    </div>
     <hr>
     <div>
         <img src="{{ product.poster.url }}" alt=""><br><br>

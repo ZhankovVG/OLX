@@ -212,6 +212,17 @@ a {
 
 /* start datail product */
 
+.category-path {
+    margin-top: 7px;
+    margin-right: 17em;
+}
+
+.category-path a {
+    font-size: 10px;
+    color: #1a531d;
+    margin-right: 3px;
+}
+
 .datail-product {
     width: 60%;
     margin: 0 auto;
