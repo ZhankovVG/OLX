@@ -45,8 +45,8 @@
                         <a href="{% url 'account_signup' %}">
                             <li class="add-announcement">Реєстрація</li>
                         </a>
-                        <a href="#">
-                            <li class="add-announcement">Додати оголошення</li>
+                            <a href="#" onclick="alert('Вы должны зарегистрироваться, прежде чем добавить объявление.')">
+                        <li class="add-announcement">Додати оголошення</li>
                         </a>
                         {% endif %}
 
@@ -127,11 +127,13 @@
                                         href="https://www.youtube.com/channel/UC5wo3B7nxMAzMII8EtLDQLQ"><img
                                             alt="youtube" width="30" height="30"
                                             src="{% static 'OLX_main/img/pngwing.com (5).png' %}"></a></li>
-                                <li class=""><a href="https://www.facebook.com/profile.php?id=100025923456368" target="_blank" title="Facebook"><img alt="Facebook" width="30"
-                                            height="30" src="{% static 'OLX_main/img/pngwing.com (6).png' %}"></a></li>
+                                <li class=""><a href="https://www.facebook.com/profile.php?id=100025923456368"
+                                        target="_blank" title="Facebook"><img alt="Facebook" width="30" height="30"
+                                            src="{% static 'OLX_main/img/pngwing.com (6).png' %}"></a></li>
                                 <li class=""><a href="#" target="_blank" title="Twitter"><img alt="Twitter" width="30"
                                             height="30" src="{% static 'OLX_main/img/pngwing.com (7).png' %}"></a></li>
-                                <li class=""><a title="instagram" target="_blank" href="https://www.instagram.com/trenirovannyi/?hl=ru"><img alt="instagram"
+                                <li class=""><a title="instagram" target="_blank"
+                                        href="https://www.instagram.com/trenirovannyi/?hl=ru"><img alt="instagram"
                                             width="30" height="30"
                                             src="{% static 'OLX_main/img/pngwing.com (8).png' %}"></a></li>
                             </ul>
