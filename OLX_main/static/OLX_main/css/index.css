@@ -256,6 +256,15 @@ a {
     text-decoration: none;
 }
 
+.number-phone p {
+    color: rgb(67, 196, 247);
+    cursor: pointer;
+}
+
+.number-phone button {
+    display: none;
+}
+
 
 /* end datail product */
 

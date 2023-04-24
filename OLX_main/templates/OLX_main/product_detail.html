@@ -36,10 +36,15 @@
         </div><br>
 
         {% for user in product.users.all %}
-        <b>Продавець: </b>{{ user.name }}
-        <p id="phone" data-phone="{{ product.phone_number }}">Связаться с продавцом</p>
-        {% endfor %}
-        <hr>
+        <b>Продавець: </b>{{ user.name }} <br>
+
+        <div class="number-phone">
+            <p onclick="showPhoneNumber()"><b>Связаться с продавцом</b></p>
+            <button id="phone-btn">
+                <a href="{{ user.phone_number }}">{{ user.phone_number }}</a></button>
+            {% endfor %}
+            <hr>
+        </div>
 
     </div>
     <div class="comments">
@@ -75,6 +80,11 @@
 </div>
 
 <script>
+    function showPhoneNumber() {
+        var phoneBtn = document.getElementById("phone-btn");
+        phoneBtn.style.display = "block";
+    }
+
     document.querySelector('.read-more').addEventListener('click', function (event) {
         event.preventDefault();
         var description = document.querySelector('.read-onli');
