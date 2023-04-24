@@ -11,8 +11,9 @@
     <a href="javascript:history.back()" style="float: left;"><i class="bi bi-chevron-left"></i> Назад</a>
     <div class="category-path">
         <a href="{% url 'main' %}">Головна /</a>
-        <a href="{% url 'datail' product.url %}">Товар /</a>
-        <a href="">{{ product.category.name }}</a>
+        <a href="{% url 'category' product.category.url %}">{{ product.category.name }} /</a>
+        <a href="#">{{ product.title | truncatewords:3 }}</a>
+        
     </div>
     <hr>
     <div>
@@ -30,18 +31,20 @@
         <b>
             <h4>ОПИС</h4>
         </b>
-        <div class="read-onli">
-            {{ product.description | truncatewords:10 }}
-            <a href="#" class="read-more">Читати далі</a>
+        <div class="description">
+            {{ product.description }}
+            
         </div><br>
 
         {% for user in product.users.all %}
+        {% if user.phone_number %}
         <b>Продавець: </b>{{ user.name }} <br>
 
         <div class="number-phone">
             <p onclick="showPhoneNumber()"><b>Связаться с продавцом</b></p>
             <button id="phone-btn">
                 <a href="{{ user.phone_number }}">{{ user.phone_number }}</a></button>
+            {% endif %}
             {% endfor %}
             <hr>
         </div>
@@ -84,12 +87,6 @@
         var phoneBtn = document.getElementById("phone-btn");
         phoneBtn.style.display = "block";
     }
-
-    document.querySelector('.read-more').addEventListener('click', function (event) {
-        event.preventDefault();
-        var description = document.querySelector('.read-onli');
-        description.innerHTML = '{{ product.description }}';
-    });
 
     // кнопка назад на предыдущую страницу
     function goBack() {
