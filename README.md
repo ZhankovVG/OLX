@@ -10,7 +10,7 @@
 
 ## About the project
 
-In this project, I tried to replicate the ОЛХ site. Implemented various transitions, category selection and product selection from the category. Implemented registration and adding a new announcement. As well as the withdrawal of goods to the basket and the purchase of the selected product.
+In this project, I tried to reproduce the OLX site. Implemented various transitions, category selection and product selection from the category. Implemented registration and adding a new ad. As well as a hidden phone number that you can see when you click on it and contact the seller.
 
 ## Documentation
 
