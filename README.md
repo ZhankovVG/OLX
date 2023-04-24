@@ -10,8 +10,7 @@
 
 ## About the project
 
-In this project, I tried to reproduce the OLX site. Implemented various transitions, category selection and product selection from the category. Implemented registration and adding a new ad. As well as a hidden phone number that you can see when you click on it and contact the seller.
-
+In this project, I tried to reproduce the OLX site. Implemented various transitions, category selection and product selection from the category. Implemented registration and adding a new ad. As well as a hidden phone number, which you can see by clicking on it and contacting the seller. I would ask you not to criticize much for the fact that the site is not highly optimized in the future I will try to fix it.
 ## Documentation
 
 Description of routes:
