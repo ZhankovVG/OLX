@@ -6,6 +6,7 @@ from django.urls import reverse
 class User(models.Model):
     # Пользователь
     name = models.CharField('Имя', max_length=150)
+    phone_number = models.CharField(max_length=21, default='')
 
     def __str__(self):
         return self.name
